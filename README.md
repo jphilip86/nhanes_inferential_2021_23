@@ -57,8 +57,6 @@ Ensure your repository is public or accessible by link, and confirm that all cod
 
 If you have any issues or run into errors, please be sure to screen shot the error message and include it in your notebook. This will help me understand the problem and provide guidance on how to resolve it. Do not NOT submit because of errors.
 
-
-
 Initially
 
 Used extension SAS viewer to open xpt files in vscode and exported it as xlsx files
@@ -70,3 +68,134 @@ However only 216 rows were showing
 demo = pd.ExcelFile('data/DEMO_L_20251021T161012.xlsx').parse('Records', header=0)
 
 Then decided to directly use xpt files
+
+
+
+## **2.1 Marital Status (DMDMARTZ)**
+
+**Codebook values:**
+
+* 1 = Married/Living with partner (Count: 4136)
+* 2 = Widowed/Divorced/Separated (Count: 2022)
+* 3 = Never married (Count: 1625)
+* 77 = Refused (Count: 4)
+* 99 = Don't know (Count: 5)
+* Missing (Count: 4141)
+
+
+
+## **2.2 Education Level (DMDEDUC2)**
+
+**Codebook values:**
+
+* 1 = Less than 9th grade (Count: 373)
+* 2 = 9-11th grade (Count: 666)
+* 3 = High school graduate/GED (Count: 1749)
+* 4 = Some college or AA degree (Count: 2370)
+* 5 = College graduate or above (Count: 2625)
+* 7 = Refused (Count: 0)
+* 9 = Don't know (Count: 11)
+* Missing (Count: 4139)
+
+
+
+## **2.3 Kidney Health (KIQ022)**
+
+**Codebook values:**
+
+* 1 = Yes (Count: 321)
+* 2 = No (Count: 7473)
+* 7 = Refused (Count: 0)
+* 9 = Don't know (Count: 13)
+* Missing (Count: 2)
+
+
+
+## **2.4 Sedentary Minutes (PAD680)**
+
+**Codebook values:**
+
+* 0 to 1380 = Range of Values (Count: 8065)
+* 7777 = Refused (Count: 6)
+* 9999 = Don't know (Count: 67)
+* Missing (Count: 15)
+
+
+
+## **2.5 Self-Reported Weight (WHD020)**
+
+**Codebook values:**
+
+* 63 to 530 = Range of Values (Count: 8358)
+* 7777 = Refused (Count: 40)
+* 9999 = Don't know (Count: 88)
+* Missing (Count: 15)
+
+
+
+## **2.6 Vitamin D Lab (LBDVD2LC)**
+
+**Codebook values:**
+
+* 0 = At or above the detection limit (Count: 1447)
+* 1 = Below lower detection limit (Count: 5860)
+* Missing (Count: 1420)
+
+
+## **2.7 Hepatitis B Surface Antibody (LBXHBS)**
+
+**Codebook values:**
+
+* 1 = Positive (Count: 2042)
+* 2 = Negative (Count: 5324)
+* 3 = Indeterminate (Count: 0)
+* Missing (Count: 1245)
+
+
+## **2.7 Hepatitis B Surface Antibody (LBXHBS)**
+
+**Codebook values:**
+
+* 1 = Positive (Count: 2042)
+* 2 = Negative (Count: 5324)
+* 3 = Indeterminate (Count: 0)
+* Missing (Count: 1245)
+
+## **2.8 Blood Pressure (BPXOSY3, BPXODI3)**
+
+**Codebook values:**
+
+* BPXOSY3: 50 to 232 mmHg (Count: 7480), Missing (321)
+* BPXODI3: 24 to 136 mmHg (Count: 7480), Missing (321)
+
+
+## **2.9 Age (RIDAGEYR)**
+
+**Codebook values:**
+
+* 0 to 79 = Range of Values (Count: 11408)
+* 80 = 80 years of age and over (Count: 525)
+* Missing (Count: 0)
+
+
+
+## **Step 3: Merge All DataFrames by SEQN**
+
+
+
+## **✅Current Dataset Summary**
+
+| Variable           | Description          | Type        | Valid Values                          |
+| ------------------ | -------------------- | ----------- | ------------------------------------- |
+| SEQN               | Respondent ID        | ID          | All 11,933                            |
+| RIDAGEYR           | Age in years         | Continuous  | 0-80                                  |
+| RIAGENDR           | Gender               | Categorical | 1=Male, 2=Female                      |
+| married            | Marital status       | Binary      | 1=Married, 0=Not married, NaN=Unknown |
+| bachelor_or_higher | Education            | Binary      | 1=Bachelor's+, 0=Less, NaN=Unknown    |
+| weak_kidney        | Kidney health        | Binary      | 1=Yes, 0=No, NaN=Unknown              |
+| BPXOSY3            | Systolic BP          | Continuous  | 50-232 mmHg                           |
+| BPXODI3            | Diastolic BP         | Continuous  | 24-136 mmHg                           |
+| PAD680             | Sedentary minutes    | Continuous  | 0-1380 min                            |
+| WHD020             | Weight (pounds)      | Continuous  | 63-530 lbs                            |
+| vitamin_d_status   | Vitamin D lab        | Binary      | 0=At/above limit, 1=Below limit       |
+| hepb_positive      | Hepatitis B antibody | Binary      | 1=Positive, 0=Negative, NaN=Unknown   |
