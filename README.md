@@ -57,17 +57,19 @@ Ensure your repository is public or accessible by link, and confirm that all cod
 
 If you have any issues or run into errors, please be sure to screen shot the error message and include it in your notebook. This will help me understand the problem and provide guidance on how to resolve it. Do not NOT submit because of errors.
 
-Initially
+ ## Initial errors
 
-Used extension SAS viewer to open xpt files in vscode and exported it as xlsx files
+Used extension SAS viewer to open xpt files in vscode and exported it as xlsx files.
 
-Then tried using openpyxl inorder to read xlsx files and run the code by trial and error
+Then tried using openpyxl in order to read xlsx files and run the code by trial and error.
 
-However only 216 rows were showing
+However only 216 rows were showing.
 
-demo = pd.ExcelFile('data/DEMO_L_20251021T161012.xlsx').parse('Records', header=0)
+Then decided to directly use xpt files.
 
-Then decided to directly use xpt files
+I had used LLMs for error checking and correction for many errors as statistics has always been foreign to me. I had to understand each line of code in order to do this assignment and the time spent was well worth it. I started out in VS Code and then transferred it into Colab and then began working in Colab. I had uploaded the data files to GitHub as it was not saving in Colab, as we know, and neither in Google Drive.
+
+
 
 
 
@@ -183,7 +185,7 @@ Then decided to directly use xpt files
 
 
 
-## **✅Current Dataset Summary**
+## **Current Dataset Summary**
 
 | Variable           | Description          | Type        | Valid Values                          |
 | ------------------ | -------------------- | ----------- | ------------------------------------- |
@@ -199,3 +201,8 @@ Then decided to directly use xpt files
 | WHD020             | Weight (pounds)      | Continuous  | 63-530 lbs                            |
 | vitamin_d_status   | Vitamin D lab        | Binary      | 0=At/above limit, 1=Below limit       |
 | hepb_positive      | Hepatitis B antibody | Binary      | 1=Positive, 0=Negative, NaN=Unknown   |
+
+## **Data Analysis Notes**
+
+I have included the line by line reasoning and notes in the notebook at the appropriate places. Thank you.
+
